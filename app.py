@@ -149,7 +149,7 @@ custom_css()
 st.title("Gerador de Project Model Canvas (PMC) 📋")
 
 # A chavinha chama a função automaticamente toda vez que for clicada (on_change)
-st.toggle("💡 Preencher com dados de exemplo (Acelera a apresentação)", key="toggle_exemplo", on_change=preencher_dados_exemplo)
+st.toggle("💡 Preencher com dados de exemplo", key="toggle_exemplo", on_change=preencher_dados_exemplo)
 
 st.write("---")
 
