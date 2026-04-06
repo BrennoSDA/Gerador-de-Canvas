@@ -174,7 +174,7 @@ with st.form("pmc_form"):
     with col3:
         st.markdown("**QUEM?**")
         stakeholders = criar_bloco_form("STAKEHOLDERS", "#972728", 100, key="stak")
-        equipe = criar_bloco_form("👥 EQUIPE", "#E67E23", 100, key="equi")
+        equipe = criar_bloco_form("EQUIPE", "#E67E23", 100, key="equi")
         
     with col4:
         st.markdown("**COMO?**")
