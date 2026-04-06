@@ -236,7 +236,7 @@ if submit_button:
             
             # Converte o PDF para Base64 e cria um iframe para exibir na tela!
             base64_pdf = base64.b64encode(pdf_bytes).decode('utf-8')
-            pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}#zoom=FitH" width="100%" height="800" type="application/pdf" style="border: 1px solid #ccc; border-radius: 8px;"></iframe>'
+            pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="100%" height="800" type="application/pdf">'
             st.markdown(pdf_display, unsafe_allow_html=True)
             
         else:
