@@ -161,7 +161,6 @@ with st.form("pmc_form"):
     col1, col2, col3, col4, col5 = st.columns(5)
     
     with col1:
-        st.markdown("**POR QUÊ?**")
         justificativas = criar_bloco_form("JUSTIFICATIVAS", "#365063", 100, key="just")
         obj_smart = criar_bloco_form("OBJ SMART", "#213A8F", 100, key="smart")
         beneficios = criar_bloco_form("BENEFÍCIOS Futuro", "#C49A2D", 100, key="bene")
