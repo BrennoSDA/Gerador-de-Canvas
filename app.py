@@ -196,11 +196,9 @@ with st.form("pmc_form"):
 # 4. LÓGICA DE PROCESSAMENTO, DOWNLOAD E PRÉ-VISUALIZAÇÃO
 # ==============================================================================
 if submit_button:
-    # 1. Validação de dados (Evita gerar PDF vazio)
     if not nome_projeto.strip():
         st.warning("⚠️ Por favor, preencha o Nome do Projeto antes de gerar o Canvas!")
     else:
-        # 2. Substitui as variáveis no HTML
         html_preenchido = HTML_TEMPLATE.format(
             nome_projeto=nome_projeto.replace('\n', '<br>'),
             justificativas=justificativas.replace('\n', '<br>'),
@@ -218,19 +216,26 @@ if submit_button:
             restricoes=restricoes.replace('\n', '<br>')
         )
         
-        # 3. Gera o arquivo
         pdf_bytes = gerar_pdf(html_preenchido)
         
         if pdf_bytes:
             st.success("✨ Project Model Canvas gerado com sucesso!")
             
-            # 4. Disponibiliza para baixar
             st.download_button(
                 label="Baixar PMC em PDF 📄",
                 data=pdf_bytes,
                 file_name=f"PMC_{nome_projeto.replace(' ', '_')}.pdf",
                 mime="application/pdf",
-                type="primary" # Deixa o botão com destaque visual
+                type="primary" 
             )
+            
+            st.write("---")
+            st.markdown("### Pré-visualização do Documento")
+            
+            # O GRANDE TRUQUE: Renderizamos o HTML diretamente na tela do Streamlit!
+            # Isso cria uma "janela" segura que o Chrome aceita perfeitamente.
+            import streamlit.components.v1 as components
+            components.html(html_preenchido, height=650, scrolling=True)
+            
         else:
             st.error("Houve um erro interno ao gerar o arquivo PDF.")
