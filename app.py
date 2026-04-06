@@ -166,22 +166,18 @@ with st.form("pmc_form"):
         beneficios = criar_bloco_form("BENEFÍCIOS Futuro", "#C49A2D", 100, key="bene")
         
     with col2:
-        st.markdown("**O QUÊ?**")
         produto = criar_bloco_form("PRODUTO", "#3A7F56", 100, key="prod")
         requisitos = criar_bloco_form("REQUISITOS", "#832E91", 245, key="reqs")
         
     with col3:
-        st.markdown("**QUEM?**")
         stakeholders = criar_bloco_form("STAKEHOLDERS", "#972728", 100, key="stak")
         equipe = criar_bloco_form("EQUIPE", "#E67E23", 100, key="equi")
         
     with col4:
-        st.markdown("**COMO?**")
         premissas = criar_bloco_form("PREMISSAS", "#4995C6", 100, key="prem")
         entregas = criar_bloco_form("GRUPO DE ENTREGAS", "#3E8A42", 100, key="entr")
         
     with col5:
-        st.markdown("**QUANDO / QUANTO?**")
         riscos = criar_bloco_form("RISCOS", "#2C2E33", 100, key="risc")
         tempo = criar_bloco_form("LINHA DO TEMPO", "#8A2D8D", 100, key="temp")
         custos = criar_bloco_form("CUSTOS", "#00A3A6", 100, key="cust")
